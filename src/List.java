@@ -78,9 +78,9 @@ public class List<T>{
 		int indeksmin = -1;
 		Node<T> now = node;
 		for(int idx=0;now != null;idx++){
-			if(min > x.hitungjarak(now.getValue())){
+			if(min > x.hitungjarak((Posisi) now.getValue())){
 				indeksmin = idx;
-				min = x.hitungjarak(now.getValue());
+				min = x.hitungjarak((Posisi) now.getValue());
 			}
 			now = now.getNext();
 		}
