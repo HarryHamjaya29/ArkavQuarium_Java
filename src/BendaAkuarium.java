@@ -5,6 +5,14 @@ public abstract class BendaAkuarium implements Posisi, Movement{
     private double y;
     private double arah;
     private double kecepatan;
+    private String image;
+
+    public BendaAkuarium(double x, double y, double arah, double kecepatan) {
+        this.x = x;
+        this.y = y;
+        this.arah = arah;
+        this.kecepatan = kecepatan;
+    }
 
     public double getX() {
         return x;
@@ -22,6 +30,10 @@ public abstract class BendaAkuarium implements Posisi, Movement{
         return kecepatan;
     }
 
+    public String getImage() {
+        return image;
+    }
+
     public void setX(double x) {
         this.x = x;
     }
@@ -36,6 +48,10 @@ public abstract class BendaAkuarium implements Posisi, Movement{
 
     public void setKecepatan(double kecepatan) {
         this.kecepatan = kecepatan;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public abstract void gerak();
