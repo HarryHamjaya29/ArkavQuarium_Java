@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea5ace49-96d0-4e8c-83ce-8700a4a19b8f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Koin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Siput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ArkavQuarium/BendaAkuarium.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ArkavQuarium/BendaAkuarium.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BendaAkuarium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BendaAkuarium.java" afterDir="false" />
-    </list>
+    <list default="true" id="ea5ace49-96d0-4e8c-83ce-8700a4a19b8f" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -147,8 +141,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="599" />
-    <option name="y" value="64" />
+    <option name="x" value="715" />
+    <option name="y" value="24" />
     <option name="width" value="651" />
     <option name="height" value="704" />
   </component>
@@ -257,7 +251,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="599" y="64" width="651" height="704" extended-state="0" />
+    <frame x="715" y="24" width="651" height="704" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
