@@ -9,6 +9,7 @@ public class List<T>{
 	public void add(T val){
 		if(node == null){
 			node = new Node<T>(val);
+			return;
 		}
 		Node<T> now = node;
 		while(now.getNext() != null){
