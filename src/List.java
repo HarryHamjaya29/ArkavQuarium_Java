@@ -1,4 +1,7 @@
 public class List<T>{
+    private int size;
+    private Node<T> node;
+
     public List(){
         node = null;
         size = 0;
@@ -6,7 +9,9 @@ public class List<T>{
     public boolean isEmpty(){
         return size == 0;
     }
+
     public void add(T val){
+        size++;
         if(node == null){
             node = new Node<T>(val);
             return;
@@ -16,8 +21,8 @@ public class List<T>{
             now = now.getNext();
         }
         now.setNext(new Node<T>(val));
-        size++;
     }
+
     public void addFirst(T val){
         Node<T> now = node;
         node = new Node<T>(val);
@@ -73,20 +78,20 @@ public class List<T>{
     public int getSize(){
         return size;
     }
-    public int cariIndeksTerdekat(Posisi x){
-        //error
-        double min = 999999999;
-        int indeksmin = -1;
-        Node<T> now = node;
-        for(int idx=0;now != null;idx++){
-            if(min > x.hitungjarak((Posisi) now.getValue())){
-                indeksmin = idx;
-                min = x.hitungjarak((Posisi) now.getValue());
-            }
-            now = now.getNext();
-        }
-        return indeksmin;
-    }
+//    public int cariIndeksTerdekat(Posisi x){
+//        //error
+//        double min = 999999999;
+//        int indeksmin = -1;
+//        Node<T> now = node;
+//        for(int idx=0;now != null;idx++){
+//            if(min > x.hitungjarak((Posisi) now.getValue())){
+//                indeksmin = idx;
+//                min = x.hitungjarak((Posisi) now.getValue());
+//            }
+//            now = now.getNext();
+//        }
+//        return indeksmin;
+//    }
     public int find(T val){
         Node<T> now = node;
         int idx = 0;
@@ -106,6 +111,4 @@ public class List<T>{
         }
         return now.getValue();
     }
-    private int size;
-    private Node<T> node;
 }

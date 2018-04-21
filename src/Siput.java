@@ -10,9 +10,10 @@ public class Siput extends BendaAkuarium{
     }
 
     public Siput(double x, double y, double a, double kecepatan) {
+
+
         super(x, y, a, kecepatan);
-        pointtujuan.setX(Math.random()%853);
-        pointtujuan.setY(Math.random()%640);
+        pointtujuan = new MakananIkan(Math.random()%853, Math.random()%640);
         this.setImage("siputkanan.png");
     }
 

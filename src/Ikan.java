@@ -5,7 +5,7 @@ public class Ikan extends BendaAkuarium{
 
     private boolean lapar;
     private final int tahankenyang = 9;
-    private int waktumakan;
+    private double waktumakan;
     private final int hunger = 15;
     private String type;
 
@@ -15,11 +15,15 @@ public class Ikan extends BendaAkuarium{
     public Ikan(double x, double y, double arah, double kecepatan, String type){
         super(x,y,arah,kecepatan);
 
+        Random rand = new Random();
+
         lapar= false;
         waktumakan = 0;
         this.setImage("ikankiri.gif");
         this.type = type;
         waktumakan = 0 /*time_since_start()[]*/;
+
+        pointtujuan = new Siput(rand.nextInt(Akuarium.SCREEN_WIDTH), rand.nextInt(Akuarium.SCREEN_HEIGHT), 0, 0);
     }
 
     public static int getBanyakikan() {
@@ -38,11 +42,11 @@ public class Ikan extends BendaAkuarium{
         return tahankenyang;
     }
 
-    public int getWaktuMakan() {
+    public double getWaktuMakan() {
         return waktumakan;
     }
 
-    public void setWaktuMakan(int waktumakan) {
+    public void setWaktuMakan(double waktumakan) {
         this.waktumakan = waktumakan;
     }
 
