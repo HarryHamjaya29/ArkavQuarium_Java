@@ -1,10 +1,11 @@
 import java.util.Random;
+import java.lang.String;
 
 public class Guppy extends Ikan{
     private final int waktukeluarkankoin = 5;
     private double waktukoin;
     private static int makannaiklevel;
-    private static String daftargambar[3][4];
+    private static String[][] daftargambar = {{"guppy1kiri.png", "guppy1kanan.png", "guppylapar1kiri.png", "guppylapar1kanan.png"}, {"guppy2kiri.png", "guppy2kanan.png", "guppylapar2kiri.png", "guppylapar2kanan.png"}, {"guppy3kiri.png", "guppy3kanan.png", "guppylapar3kiri.png", "guppylapar3kanan.png"}};
     private int level;
     private int jumlahmakanyangdimakan;
 
@@ -26,10 +27,6 @@ public class Guppy extends Ikan{
 
     public static int getMakanNaikLevel() {
         return makannaiklevel;
-    }
-
-    public static String[] getDaftarGambar() {
-        return daftargambar;
     }
 
     @Override
@@ -76,7 +73,7 @@ public class Guppy extends Ikan{
         Random rand = new Random();
 
         if (0/*time_since_start()*/ - this.getWaktuRandom() >= 3) {
-            Posisi tujuan(rand.nextInt(0/*SCREEN_WIDTH*/), rand.nextInt(0/*SCREEN_HEIGHT*/)+100);
+            Posisi tujuan = new Siput(rand.nextInt(0/*SCREEN_WIDTH*/), rand.nextInt(0/*SCREEN_HEIGHT*/)+100, 0,0);
             this.setPointTujuan(tujuan);
             this.setWaktuRandom(0/*time_since_start()*/);
         }
@@ -89,10 +86,10 @@ public class Guppy extends Ikan{
         this.setX(this.getX() + this.getKecepatan()*Math.cos(this.getArah())*0.0001);
         this.setY(this.getY() + this.getKecepatan()*Math.sin(this.getArah())*0.0001);
         if (Math.abs(this.getX() - this.getPointTujuan().getX()) < 0.1 && Math.abs(this.getY() - this.getPointTujuan().getY()) < 0.1) {
-            Posisi tujuan(rand.nextInt(0/*SCREEN_WIDTH*/), rand.nextInt(0/*SCREEN_HEIGHT*/ +100);
+            Posisi tujuan = new Siput(rand.nextInt(0/*SCREEN_WIDTH*/), rand.nextInt(0/*SCREEN_HEIGHT*/)+100, 0,0);
             this.setPointTujuan(tujuan);
         }
-        if (int(0/*time_since_start()*/) - int(this.getWaktuMakan()) == this.getTahanKenyang()) {
+        if ((int)0/*time_since_start()*/ - (int)this.getWaktuMakan() == this.getTahanKenyang()) {
             this.setLapar(true);
         }
     }
@@ -100,11 +97,13 @@ public class Guppy extends Ikan{
     public int cariMakanGuppy(List<MakananIkan> listmakananikan) {
 
         Random rand = new Random();
-        Posisi now(this.getX(), this.getY());
+
+        Posisi now = new Siput(this.getX(), this.getY(), 0, 0);
+
         int terdekat = listmakananikan.cariIndeksTerdekat(now);
 
         if (terdekat != -1) {
-            this.setArah(Math.atan2(listmakananikan.getRef(terdekat).getY() - this.getY(), listmakananikan.getRef(terdekat).getX() - this.getX()));
+            this.setArah(Math.atan2(listmakananikan.getIdx(terdekat).getY() - this.getY(), listmakananikan.getIdx(terdekat).getX() - this.getX()));
             if (this.getArah()*180/Math.PI > -90 && this.getArah()*180/Math.PI < 90) {
                 this.setImage(daftargambar[this.getLevel()-1][3]);
             } else {
@@ -112,7 +111,7 @@ public class Guppy extends Ikan{
             }
             this.setX(this.getX() + this.getKecepatan()*Math.cos(this.getArah())*0.0001);
             this.setY(this.getY() + this.getKecepatan()*Math.sin(this.getArah())*0.0001);
-            if (Math.abs(this.getX() - listmakananikan.getRef(terdekat).getX()) < 0.1 && Math.abs(this.getY() - listmakananikan.getRef(terdekat).getY()) < 0.1) {
+            if (Math.abs(this.getX() - listmakananikan.getIdx(terdekat).getX()) < 0.1 && Math.abs(this.getY() - listmakananikan.getIdx(terdekat).getY()) < 0.1) {
                 this.setLapar(false);
                 this.setWaktuMakan(0/*time_since_start()*/);
                 jumlahmakanyangdimakan++;
@@ -129,7 +128,7 @@ public class Guppy extends Ikan{
             this.setX(this.getX() + this.getKecepatan()*Math.cos(this.getArah())*0.0001);
             this.setY(this.getY() + this.getKecepatan()*Math.sin(this.getArah())*0.0001);
             if (Math.abs(this.getX() - this.getPointTujuan().getX()) < 0.1 && Math.abs(this.getY() - this.getPointTujuan().getY()) < 0.1) {
-                Posisi tujuan(rand.nextInt(0/*SCREEN_WIDTH*/, rand.nextInt(0/*SCREEN_HEIGHT*/+100);
+                Posisi tujuan = new Siput(rand.nextInt(0/*SCREEN_WIDTH*/), rand.nextInt(0/*SCREEN_HEIGHT*/)+100, 0,0);
                 this.setPointTujuan(tujuan);
             }
         }

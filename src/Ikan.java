@@ -117,7 +117,7 @@ public class Ikan extends BendaAkuarium{
         return 0.0f;
     }
 
-    public double getLevel(){
+    public int getLevel(){
         return 0;
     }
 
