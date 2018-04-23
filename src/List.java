@@ -30,16 +30,26 @@ public class List<T>{
         size++;
     }
     public void removeIdx(int idx){
-        if(idx == 0){
-            delFirst();
-            return;
-        }
-        Node<T> now = node;
-        while(idx>1){
+        Node<T> prev = null;
+        Node<T> now = head;
+
+        int i = 0;
+        while (i < idx){
+            prev = now;
             now = now.getNext();
+            i++;
         }
-        now.setNext(now.getNext().getNext());
-        size--;
+
+        if (now != null){
+            if (prev != null){
+                prev.setNext(now.getNext());
+            }else{
+                head = now.getNext();
+            }
+            now.setNext(null);
+            return true;
+        }else return false;
+
     }
     public void remove(T item){
         if(item.equals(node.getValue())){
