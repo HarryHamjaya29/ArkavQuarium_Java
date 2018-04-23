@@ -3,7 +3,12 @@ import java.lang.Math;
 public class Koin extends BendaAkuarium {
     private int nilai;
     private final int level;
-    private static String[] daftargambar;
+    private static String[] daftargambar = {
+            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/koin1.jpg",
+            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/koin2.jpg",
+            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/koin3.jpg",
+            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/koin4.jog"
+    };
 
     public Koin(double x, double y, double kecepatan, int nilai, int i) {
         super(x, y, 0, kecepatan);
@@ -34,7 +39,7 @@ public class Koin extends BendaAkuarium {
 
     @Override
     public void gerak() {
-        if (Math.abs(this.getY() - 0/*SCREEN_HEIGHT*/ - 20) > 0.1) {
+        if (Math.abs(this.getY() - Akuarium.SCREEN_HEIGHT - 20) > 1) {
             this.setY(this.getY() + this.getKecepatan() * 0.01);
         }
     }

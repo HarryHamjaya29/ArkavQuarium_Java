@@ -1,13 +1,11 @@
 public class MakananIkan extends BendaAkuarium {
     public MakananIkan(double x, double y) {
         super(x, y, 0, 500);
-        this.setImage("makananikan");
+        this.setImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/makananikan");
     }
 
     public void gerak() {
-        if (Math.abs(this.getY() - 640) > 0.1) {
-            this.setY(this.getY() + 0.1);
-        }
+        this.setY(this.getY() + 2);
     }
 
 }

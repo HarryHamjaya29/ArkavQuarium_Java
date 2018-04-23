@@ -4,7 +4,7 @@ import java.lang.String;
 public class Guppy extends Ikan{
     private final int waktukeluarkankoin = 5;
     private double waktukoin;
-    private static int makannaiklevel;
+    private static int makannaiklevel = 5;
     private static String[][] daftargambar = {
         {   "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/guppy1kiri.png",
             "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/guppy1kanan.png",
@@ -26,7 +26,7 @@ public class Guppy extends Ikan{
         super(x,y,arah,kecepatan,"Guppy");
         level = 1;
         jumlahmakanyangdimakan = 0;
-        waktukoin= 0 /*time_since_start()*/;
+        waktukoin= Akuarium.time_since_start();
         this.setImage(daftargambar[0][0]);
     }
 
@@ -85,7 +85,6 @@ public class Guppy extends Ikan{
     public void gerak(){
         Random rand = new Random();
         if (Akuarium.time_since_start() - this.getWaktuRandom() >= 3) {
-            System.out.println("HAI");
             Posisi tujuan = new Siput(rand.nextInt(Akuarium.SCREEN_WIDTH), rand.nextInt(Akuarium.SCREEN_HEIGHT)+100, 0,0);
             this.setPointTujuan(tujuan);
             this.setWaktuRandom(Akuarium.time_since_start());
@@ -99,7 +98,7 @@ public class Guppy extends Ikan{
         }
         this.setX(this.getX() + this.getKecepatan()*Math.cos(this.getArah())*0.0001);
         this.setY(this.getY() + this.getKecepatan()*Math.sin(this.getArah())*0.0001);
-        if (Math.abs(this.getX() - this.getPointTujuan().getX()) < 0.1 && Math.abs(this.getY() - this.getPointTujuan().getY()) < 0.1) {
+        if (Math.abs(this.getX() - this.getPointTujuan().getX()) < 1 && Math.abs(this.getY() - this.getPointTujuan().getY()) < 1) {
             Posisi tujuan = new Siput(rand.nextInt(Akuarium.SCREEN_WIDTH), rand.nextInt(Akuarium.SCREEN_HEIGHT)+100, 0,0);
             this.setPointTujuan(tujuan);
         }
@@ -142,7 +141,7 @@ public class Guppy extends Ikan{
             }
             this.setX(this.getX() + this.getKecepatan()*Math.cos(this.getArah())*0.0001);
             this.setY(this.getY() + this.getKecepatan()*Math.sin(this.getArah())*0.0001);
-            if (Math.abs(this.getX() - listmakananikan.getIdx(terdekat).getX()) < 0.1 && Math.abs(this.getY() - listmakananikan.getIdx(terdekat).getY()) < 0.1) {
+            if (Math.abs(this.getX() - listmakananikan.getIdx(terdekat).getX()) < 1 && Math.abs(this.getY() - listmakananikan.getIdx(terdekat).getY()) < 1) {
                 this.setLapar(false);
                 this.setWaktuMakan(Akuarium.time_since_start());
                 jumlahmakanyangdimakan++;
@@ -150,6 +149,11 @@ public class Guppy extends Ikan{
                 return terdekat;
             }
         } else {
+            if (Akuarium.time_since_start() - this.getWaktuRandom() >= 3) {
+                Posisi tujuan = new Siput(rand.nextInt(Akuarium.SCREEN_WIDTH), rand.nextInt(Akuarium.SCREEN_HEIGHT)+100, 0,0);
+                this.setPointTujuan(tujuan);
+                this.setWaktuRandom(Akuarium.time_since_start());
+            }
             this.setArah(Math.atan2(this.getPointTujuan().getY()-this.getY(), this.getPointTujuan().getX()-this.getX()));
             if (this.getArah()*180/Math.PI > -90 && this.getArah()*180/Math.PI < 90) {
                 this.setImage(daftargambar[this.getLevel()-1][3]);
@@ -158,7 +162,7 @@ public class Guppy extends Ikan{
             }
             this.setX(this.getX() + this.getKecepatan()*Math.cos(this.getArah())*0.0001);
             this.setY(this.getY() + this.getKecepatan()*Math.sin(this.getArah())*0.0001);
-            if (Math.abs(this.getX() - this.getPointTujuan().getX()) < 0.1 && Math.abs(this.getY() - this.getPointTujuan().getY()) < 0.1) {
+            if (Math.abs(this.getX() - this.getPointTujuan().getX()) < 1 && Math.abs(this.getY() - this.getPointTujuan().getY()) < 1) {
                 Posisi tujuan = new Siput(rand.nextInt(Akuarium.SCREEN_WIDTH), rand.nextInt(Akuarium.SCREEN_HEIGHT)+100, 0,0);
                 this.setPointTujuan(tujuan);
             }

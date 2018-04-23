@@ -78,20 +78,6 @@ public class List<T>{
     public int getSize(){
         return size;
     }
-//    public int cariIndeksTerdekat(Posisi x){
-//        //error
-//        double min = 999999999;
-//        int indeksmin = -1;
-//        Node<T> now = node;
-//        for(int idx=0;now != null;idx++){
-//            if(min > x.hitungjarak((Posisi) now.getValue())){
-//                indeksmin = idx;
-//                min = x.hitungjarak((Posisi) now.getValue());
-//            }
-//            now = now.getNext();
-//        }
-//        return indeksmin;
-//    }
     public int find(T val){
         Node<T> now = node;
         int idx = 0;

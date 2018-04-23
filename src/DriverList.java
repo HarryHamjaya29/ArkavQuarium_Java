@@ -2,13 +2,18 @@ import java.util.Random;
 
 public class DriverList {
     public static void main(String[] args){
-        Random rand = new Random();
-        List<Ikan> ikan = new List<Ikan>();
+        List<Integer> listint = new List<>();
 
-        Ikan newguppy = new Guppy(rand.nextInt(Akuarium.SCREEN_WIDTH), rand.nextInt(Akuarium.SCREEN_HEIGHT), 0, 2000);
-        ikan.add(newguppy);
+        listint.add(1);
+        listint.add(2);
+        listint.add(3);
+        listint.add(4);
+        listint.add(5);
+        listint.add(6);
+        listint.add(7);
 
-        System.out.println(ikan.getIdx(0).getX() + " " + ikan.getIdx(0).getY());
-        System.out.println(ikan.getSize());
+        for(int i = 0; i < listint.getSize(); i++) {
+            System.out.println(listint.getIdx(i));
+        }
     }
 }

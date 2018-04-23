@@ -21,7 +21,7 @@ public class Ikan extends BendaAkuarium{
         waktumakan = 0;
         this.setImage("ikankiri.gif");
         this.type = type;
-        waktumakan = 0 /*time_since_start()[]*/;
+        waktumakan = Akuarium.time_since_start();
 
         pointtujuan = new Siput(rand.nextInt(Akuarium.SCREEN_WIDTH), rand.nextInt(Akuarium.SCREEN_HEIGHT), 0, 0);
     }
@@ -30,7 +30,7 @@ public class Ikan extends BendaAkuarium{
         return banyakikan;
     }
 
-    public boolean isLapar() {
+    public boolean getLapar() {
         return lapar;
     }
 
@@ -90,16 +90,16 @@ public class Ikan extends BendaAkuarium{
         this.setX(this.getX() + this.getKecepatan()*Math.cos(this.getArah())*0.0001);
         this.setY(this.getY() + this.getKecepatan()*Math.sin(this.getArah())*0.0001);
         if (Math.abs(this.getY()- pointtujuan.getX()) < 0.1 && Math.abs(this.getY() - pointtujuan.getY())<0.1 ) {
-            pointtujuan.setX(rand.nextInt(0/*SCREEN_WIDTH*/));
-            pointtujuan.setY(rand.nextInt(0/*SCREEN_HEIGHT*/));
+            pointtujuan.setX(rand.nextInt(Akuarium.SCREEN_WIDTH));
+            pointtujuan.setY(rand.nextInt(Akuarium.SCREEN_HEIGHT));
         }
-        if ((int)0/*time_since_start()*/ - (int)waktumakan ==tahankenyang){
+        if (Akuarium.time_since_start() - (int)waktumakan ==tahankenyang){
             lapar = true;
         }
     }
 
     public boolean mati(){
-        if (0/*time_since_start()*/ - this.getWaktuMakan() - this.getTahanKenyang()>= this.getHunger()){
+        if (Akuarium.time_since_start() - this.getWaktuMakan() - this.getTahanKenyang()>= this.getHunger()){
             return true;
         }
         return false;
@@ -129,18 +129,10 @@ public class Ikan extends BendaAkuarium{
         return 0;
     }
 
-    public void setLevel(int x){
+    public void setLevel(int x){}
 
-    }
+    public void setJumlahMakanYangDimakan(int x){}
 
-    public void setJumlahMakanYangDimakan(int x){
-
-    }
-
-    public void setWaktuKoin(double x){
-
-    }
-
-
+    public void setWaktuKoin(double x){}
 }
 
