@@ -5,6 +5,15 @@ import static org.junit.Assert.*;
 public class IkanTest {
 
     @Test
+<<<<<<< HEAD
+=======
+    public void getBanyakikan() {
+        Ikan test = new Piranha(1,1,1,100);
+
+    }
+
+    @Test
+>>>>>>> 729179d831946da3875e9d4d2e50c314010d80ca
     public void getLapar() {
 
     }

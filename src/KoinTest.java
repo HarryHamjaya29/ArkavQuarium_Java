@@ -1,4 +1,3 @@
-import kotlin.reflect.jvm.internal.FunctionCaller;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
