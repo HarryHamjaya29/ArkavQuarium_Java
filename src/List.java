@@ -29,9 +29,9 @@ public class List<T>{
         node.setNext(now);
         size++;
     }
-    public void removeIdx(int idx){
+  public void removeIdx(int idx){
         Node<T> prev = null;
-        Node<T> now = head;
+        Node<T> now = node;
 
         int i = 0;
         while (i < idx){
@@ -44,13 +44,13 @@ public class List<T>{
             if (prev != null){
                 prev.setNext(now.getNext());
             }else{
-                head = now.getNext();
+                node = now.getNext();
             }
             now.setNext(null);
-            return true;
-        }else return false;
-
-    }
+            return;
+        }else return;
+  }
+    
     public void remove(T item){
         if(item.equals(node.getValue())){
             delFirst();
