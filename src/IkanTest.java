@@ -5,15 +5,8 @@ import static org.junit.Assert.*;
 public class IkanTest {
 
     @Test
-    public void getBanyakikan() {
-        assertEquals(0, Ikan.getBanyakikan());
-        Ikan test = new Piranha(1,1,1,100);
-        assertEquals(1, Ikan.getBanyakikan());
-
-    }
-
-    @Test
     public void getLapar() {
+
     }
 
     @Test
