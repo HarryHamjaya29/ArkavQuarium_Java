@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c9b7353-d89c-457a-81a6-bcb4ae32a5fc" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/IkanTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ikan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ikan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IkanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IkanTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -85,8 +83,8 @@
       <file leaf-file-name="Ikan.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Ikan.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+            <state relative-caret-position="-136">
+              <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -94,8 +92,8 @@
       <file leaf-file-name="IkanTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/IkanTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="102">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -192,8 +190,8 @@
         <option value="$PROJECT_DIR$/src/Guppy.java" />
         <option value="$PROJECT_DIR$/src/Piranha.java" />
         <option value="$PROJECT_DIR$/src/Akuarium.java" />
-        <option value="$PROJECT_DIR$/src/IkanTest.java" />
         <option value="$PROJECT_DIR$/src/Ikan.java" />
+        <option value="$PROJECT_DIR$/src/IkanTest.java" />
       </list>
     </option>
   </component>
@@ -728,15 +726,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/IkanTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="102">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Ikan.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+        <state relative-caret-position="-136">
+          <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
         </state>
       </provider>
     </entry>
