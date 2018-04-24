@@ -151,6 +151,12 @@ public class Akuarium extends JPanel {
                                     menang = true;
                                 }
                             }
+                        } else if ((mouseX >= 36 && mouseX <= 86) && (mouseY <= 604 && mouseY >= 578)){
+                            try {
+                                save();
+                            } catch (IOException ioexception) {
+                                System.out.println("ERROR");
+                            }
                         } else {
                             if (player.getJumlahkoin() < 5) {
                                 kurangkoin = true;
@@ -165,6 +171,29 @@ public class Akuarium extends JPanel {
                 }
             }
         });
+    }
+
+    public void save() throws IOException {
+        BufferedWriter fileikan = new BufferedWriter(new FileWriter("Ikan.txt"));
+
+        for(int i = 0; i < ikan.getSize(); i++) {
+            fileikan.write(ikan.getIdx(i).getX() + " " + ikan.getIdx(i).getY());
+            fileikan.write(" " + ikan.getIdx(i).getLapar() + " " + (ikan.getIdx(i).getWaktuMakan() - time_since_start()) + " " + ikan.getIdx(i).getType() + " " + ikan.getIdx(i).getPointTujuan().getX() + " " + ikan.getIdx(i).getPointTujuan().getY());
+            if (ikan.getIdx(i).getType().equals("Guppy")) {
+                fileikan.write(" " + (ikan.getIdx(i).getWaktuKoin() - time_since_start()) + " " + ikan.getIdx(i).getLevel() + " " + ikan.getIdx(i).getJumlahMakanYangDimakan() + "\n");
+            } else {
+                fileikan.write("\n");
+            }
+        }
+
+        BufferedWriter filemakananikan = new BufferedWriter(new FileWriter("MakananIkan.txt"));
+
+        for(int i = 0; i < makananikan.getSize(); i++) {
+            filemakananikan.write(makananikan.getIdx(i).getX() + " " + makananikan.getIdx(i));
+            filemakananikan.write(" " + makananikan.getIdx(i).getImage() + "\n");
+        }
+
+        fileikan.close();
     }
 
     public void startAkuarium() {
@@ -211,6 +240,7 @@ public class Akuarium extends JPanel {
         int dapatkoin = siput.cariKoin(koin);
 
         if (dapatkoin != -1) {
+            player.tambahKoin(koin.getIdx(dapatkoin).getNilai());
             koin.removeIdx(dapatkoin);
         }
 
