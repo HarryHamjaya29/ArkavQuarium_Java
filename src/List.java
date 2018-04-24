@@ -32,8 +32,7 @@ public class List<T>{
     public void removeIdx(int idx){
         Node<T> temp = node;
         if (idx == 0) {
-            node = node.getNext();
-            size--;
+            delFirst();
             return;
         }
         while(temp.getNext() != null && idx > 1) {
@@ -41,7 +40,7 @@ public class List<T>{
             idx--;
         }
         if (temp.getNext() != null) {
-            size--;
+            --size;
             Node<T> del = temp.getNext();
             temp.setNext(del.getNext());
         }
@@ -58,6 +57,7 @@ public class List<T>{
         }
         if(now.getNext() == null)
             return;
+        --size;
         now.setNext(now.getNext().getNext());
     }
     public T delFirst(){
@@ -91,7 +91,7 @@ public class List<T>{
             now = now.getNext();
             idx++;
         }
-        if(node == null)
+        if(now == null)
             return -1;
         return idx;
     }
