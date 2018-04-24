@@ -1,8 +1,6 @@
 import java.util.Random;
 
 public class Ikan extends BendaAkuarium{
-    private static final int banyakikan= 0;
-
     private boolean lapar;
     private final int tahankenyang = 9;
     private double waktumakan;
@@ -24,10 +22,6 @@ public class Ikan extends BendaAkuarium{
         waktumakan = Akuarium.time_since_start();
 
         pointtujuan = new Siput(rand.nextInt(Akuarium.SCREEN_WIDTH), rand.nextInt(Akuarium.SCREEN_HEIGHT), 0, 0);
-    }
-
-    public static int getBanyakikan() {
-        return banyakikan;
     }
 
     public boolean getLapar() {
