@@ -22,7 +22,7 @@ public class Guppy extends Ikan{
     private int level;
     private int jumlahmakanyangdimakan;
 
-    public Guppy(int x, int y, double arah, double kecepatan){
+    public Guppy(double x, double y, double arah, double kecepatan){
         super(x,y,arah,kecepatan,"Guppy");
         level = 1;
         jumlahmakanyangdimakan = 0;

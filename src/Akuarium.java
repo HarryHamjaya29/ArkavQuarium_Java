@@ -1,8 +1,9 @@
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import java.io.BufferedReader;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
@@ -108,6 +109,12 @@ public class Akuarium extends JPanel {
                 } else if (mainmenu) {
                     if ((mouseX <= 773 && mouseX >= 619) && (mouseY <= 471 && mouseY >= 324)) {
                         mainmenu = false;
+                    } else if ((mouseX <= 637 && mouseX >= 541) && (mouseY <= 275 && mouseY >= 188)) {
+                        try {
+                            load();
+                        } catch (IOException error) {
+                            System.out.println("ERROR Load");
+                        }
                     }
                 } else if (menang) {
 
@@ -174,11 +181,11 @@ public class Akuarium extends JPanel {
     }
 
     public void save() throws IOException {
-        BufferedWriter fileikan = new BufferedWriter(new FileWriter("Ikan.txt"));
+        BufferedWriter fileikan = new BufferedWriter(new FileWriter("FileSave/Ikan.txt"));
 
         for(int i = 0; i < ikan.getSize(); i++) {
             fileikan.write(ikan.getIdx(i).getX() + " " + ikan.getIdx(i).getY());
-            fileikan.write(" " + ikan.getIdx(i).getLapar() + " " + (ikan.getIdx(i).getWaktuMakan() - time_since_start()) + " " + ikan.getIdx(i).getType() + " " + ikan.getIdx(i).getPointTujuan().getX() + " " + ikan.getIdx(i).getPointTujuan().getY());
+            fileikan.write(" " + ikan.getIdx(i).getLapar() + " " + (ikan.getIdx(i).getWaktuMakan() - time_since_start()) + " " + ikan.getIdx(i).getType() + " " + ikan.getIdx(i).getPointTujuan().getX() + " " + ikan.getIdx(i).getPointTujuan().getY() + " " + ikan.getIdx(i).getImage() + " " + (ikan.getIdx(i).getWaktuRandom() - time_since_start()));
             if (ikan.getIdx(i).getType().equals("Guppy")) {
                 fileikan.write(" " + (ikan.getIdx(i).getWaktuKoin() - time_since_start()) + " " + ikan.getIdx(i).getLevel() + " " + ikan.getIdx(i).getJumlahMakanYangDimakan() + "\n");
             } else {
@@ -186,14 +193,113 @@ public class Akuarium extends JPanel {
             }
         }
 
-        BufferedWriter filemakananikan = new BufferedWriter(new FileWriter("MakananIkan.txt"));
+        BufferedWriter filemakananikan = new BufferedWriter(new FileWriter("FileSave/MakananIkan.txt"));
 
         for(int i = 0; i < makananikan.getSize(); i++) {
-            filemakananikan.write(makananikan.getIdx(i).getX() + " " + makananikan.getIdx(i));
+            filemakananikan.write(makananikan.getIdx(i).getX() + " " + makananikan.getIdx(i).getY());
             filemakananikan.write(" " + makananikan.getIdx(i).getImage() + "\n");
         }
 
+        BufferedWriter filekoin = new BufferedWriter(new FileWriter("FileSave/Koin.txt"));
+
+        for(int i = 0; i < koin.getSize(); i++) {
+            filekoin.write(koin.getIdx(i).getX() + " " + koin.getIdx(i).getY() + " " + koin.getIdx(i).getKecepatan());
+            filekoin.write(" " + koin.getIdx(i).getNilai() + " " + koin.getIdx(i).getLevel() + " " + koin.getIdx(i).getImage() + "\n");
+        }
+
+        BufferedWriter filesiput = new BufferedWriter(new FileWriter("FileSave/Siput.txt"));
+
+        filesiput.write(siput.getX() + " " + siput.getY() + " " + siput.getPointtujuan().getX() + " " + siput.getPointtujuan().getY() + " " + siput.getImage() + "\n");
+
+        BufferedWriter fileplayer = new BufferedWriter(new FileWriter("FileSave/Player.txt"));
+
+        fileplayer.write(player.getJumlahkoin() + " " + player.getBanyaktelur() + "\n");
+
+        fileplayer.close();
+        filesiput.close();
+        filekoin.close();
+        filemakananikan.close();
         fileikan.close();
+    }
+
+    public void load() throws IOException {
+        BufferedReader fileikan = new BufferedReader(new FileReader("FileSave/Ikan.txt"));
+
+        String line;
+        String splitline[] ;
+
+        while((line = fileikan.readLine()) != null) {
+            splitline = line.split(" ");
+
+            if (splitline[4].equals("Guppy")) {
+                Ikan newguppy = new Guppy(Double.parseDouble(splitline[0]), Double.parseDouble(splitline[1]), 0, 40000);
+
+                newguppy.setLapar(Boolean.parseBoolean(splitline[2]));
+                newguppy.setWaktuMakan(Double.parseDouble(splitline[3]));
+                newguppy.getPointTujuan().setX(Double.parseDouble(splitline[5]));
+                newguppy.getPointTujuan().setY(Double.parseDouble(splitline[6]));
+                newguppy.setImage(splitline[7]);
+                newguppy.setWaktuRandom(Double.parseDouble(splitline[8]));
+                newguppy.setWaktuKoin(Double.parseDouble(splitline[9]));
+                newguppy.setLevel(Integer.parseInt(splitline[10]));
+                newguppy.setJumlahMakanYangDimakan(Integer.parseInt(splitline[11]));
+
+                ikan.add(newguppy);
+            } else {
+                Ikan newpiranha = new Piranha(Double.parseDouble(splitline[0]), Double.parseDouble(splitline[1]), 0, 60000);
+
+                newpiranha.setLapar(Boolean.parseBoolean(splitline[2]));
+                newpiranha.setWaktuMakan(Double.parseDouble(splitline[3]));
+                newpiranha.getPointTujuan().setX(Double.parseDouble(splitline[5]));
+                newpiranha.getPointTujuan().setY(Double.parseDouble(splitline[6]));
+                newpiranha.setImage(splitline[7]);
+                newpiranha.setWaktuRandom(Double.parseDouble(splitline[8]));
+
+                ikan.add(newpiranha);
+            }
+        }
+
+        BufferedReader filekoin = new BufferedReader(new FileReader("FileSave/Koin.txt"));
+
+        while((line = filekoin.readLine()) != null) {
+            splitline = line.split(" ");
+
+            Koin newkoin = new Koin(Double.parseDouble(splitline[0]), Double.parseDouble(splitline[1]), Double.parseDouble(splitline[2]), Integer.parseInt(splitline[3]), Integer.parseInt(splitline[4]));
+
+            koin.add(newkoin);
+        }
+
+        BufferedReader filemakananikan = new BufferedReader(new FileReader("FileSave/MakananIkan.txt"));
+
+        while((line = filemakananikan.readLine()) != null) {
+            splitline = line.split(" ");
+
+            MakananIkan newmakananikan = new MakananIkan(Double.parseDouble(splitline[0]), Double.parseDouble(splitline[1]));
+
+            makananikan.add(newmakananikan);
+        }
+
+        BufferedReader filesiput = new BufferedReader(new FileReader("FileSave/Siput.txt"));
+
+        line = filesiput.readLine();
+        splitline = line.split(" ");
+        siput.setX(Double.parseDouble(splitline[0]));
+        siput.setY(Double.parseDouble(splitline[1]));
+
+        BufferedReader fileplayer = new BufferedReader(new FileReader("FileSave/Player.txt"));
+
+        line = fileplayer.readLine();
+        splitline = line.split(" ");
+        player.setJumlahkoin(Integer.parseInt(splitline[0]));
+        player.setBanyaktelur(Integer.parseInt(splitline[1]));
+
+        fileplayer.close();
+        filesiput.close();
+        filemakananikan.close();
+        filekoin.close();
+        fileikan.close();
+
+        mainmenu = false;
     }
 
     public void startAkuarium() {
