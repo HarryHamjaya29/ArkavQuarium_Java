@@ -5,13 +5,8 @@ import static org.junit.Assert.*;
 public class IkanTest {
 
     @Test
-    public void getBanyakikan() {
-        Ikan test = new Piranha(1,1,1,100);
-
-    }
-
-    @Test
     public void getLapar() {
+
     }
 
     @Test
