@@ -21,8 +21,13 @@ public class Akuarium extends JPanel {
     public static int PLAY = 1;
     public static int FINISH = 2;
 
-    private final String BACKGROUND_IMAGE = "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/Aquarium6.jpg";
-    private final String TOOLBAR_IMAGE = "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/tabatas.png";
+    public final static String parentFolder = "../../../";
+
+    private final String BACKGROUND_IMAGE = "image/Aquarium6.jpg";
+    private final String TOOLBAR_IMAGE = "image/tabatas.png";
+    private final String MAINMENU_IMAGE = "image/mainmenu.png";
+
+    private final String abspath = Akuarium.class.getProtectionDomain().getCodeSource().getLocation().getPath().replaceAll("%20", " ");
 
     private BufferedImage defaultImage;
     private Map<String, BufferedImage> images;
@@ -97,7 +102,8 @@ public class Akuarium extends JPanel {
                 if (kalah) {
 
                 } else if (mainmenu) {
-                    if ((mouseX <= 637 && mouseX >= 541) && (mouseY <= 275 && mouseY >= 188)) {
+                    System.out.println(mouseX + " , " + mouseY);
+                    if ((mouseX <= 773 && mouseX >= 619) && (mouseY <= 471 && mouseY >= 324)) {
                         mainmenu = false;
                     }
                 } else {
@@ -256,50 +262,51 @@ public class Akuarium extends JPanel {
 
     @Override
     protected void paintComponent(Graphics g) {
-
-        if (mainmenu) {
-
-        } else {
-
-        }
-
         super.paintComponent(g);
         setBackground(Color.WHITE);
         g.setColor(Color.WHITE);
-        g.drawImage(readImage(BACKGROUND_IMAGE), 0, 0, null);
-        g.drawImage(readImage(TOOLBAR_IMAGE), 0, 0, null);
 
-        for(int i = 0; i < ikan.getSize(); i++) {
-            g.drawImage(readImage(ikan.getIdx(i).getImage()), (int)Math.floor(ikan.getIdx(i).getX()) - 80/2, (int)Math.floor(ikan.getIdx(i).getY()-100)-80/2, null);
-        }
-
-        for(int i = 0; i < makananikan.getSize(); i++) {
-            g.drawImage(readImage(makananikan.getIdx(i).getImage()), (int)Math.floor(makananikan.getIdx(i).getX())-40/2, (int)Math.floor(makananikan.getIdx(i).getY())-100-40/2, null);
-        }
-
-        for(int i = 0; i < koin.getSize(); i++) {
-            g.drawImage(readImage(koin.getIdx(i).getImage()), (int)Math.floor(koin.getIdx(i).getX())-65/2, (int)Math.floor(koin.getIdx(i).getY())-100-30/2, null);
-        }
-
-        if (player.getBanyaktelur() == 0) {
-            g.drawImage(readImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/telor1.png"), 645 - 70/2, 45 - 64/2, null);
-        } else if (player.getBanyaktelur() == 1) {
-            g.drawImage(readImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/telor2.png"), 645 - 70/2, 45 - 64/2, null);
-        } else if (player.getBanyaktelur() == 2) {
-            g.drawImage(readImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/telor3.png"), 645 - 70/2, 45 - 64/2, null);
-        }
-
-        g.drawImage(readImage(siput.getImage()), (int)Math.floor(siput.getX())-100/2, (int)Math.floor(siput.getY())-100-141/2, null);
-
-        g.drawString("100", 60, 93);
-        g.drawString("200", 174, 93);
-        g.drawString("500", 631, 93);
-
-        if (kurangkoin) {
-            g.setColor(Color.RED);
-            g.drawString(player.getJumlahkoin() + "", 752, 93);
+        if (mainmenu) {
+            g.drawImage(readImage(MAINMENU_IMAGE), 0, 0, null);
         } else {
-            g.drawString(player.getJumlahkoin() + "", 752, 93);
+            g.drawImage(readImage(BACKGROUND_IMAGE), 0, 0, null);
+            g.drawImage(readImage(TOOLBAR_IMAGE), 0, 0, null);
+
+            for(int i = 0; i < ikan.getSize(); i++) {
+                g.drawImage(readImage(ikan.getIdx(i).getImage()), (int)Math.floor(ikan.getIdx(i).getX()) - 80/2, (int)Math.floor(ikan.getIdx(i).getY()-100)-80/2, null);
+            }
+
+            for(int i = 0; i < makananikan.getSize(); i++) {
+                g.drawImage(readImage(makananikan.getIdx(i).getImage()), (int)Math.floor(makananikan.getIdx(i).getX())-40/2, (int)Math.floor(makananikan.getIdx(i).getY())-100-40/2, null);
+            }
+
+            for(int i = 0; i < koin.getSize(); i++) {
+                g.drawImage(readImage(koin.getIdx(i).getImage()), (int)Math.floor(koin.getIdx(i).getX())-65/2, (int)Math.floor(koin.getIdx(i).getY())-100-30/2, null);
+            }
+
+            if (player.getBanyaktelur() == 0) {
+                g.drawImage(readImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/telor1.png"), 645 - 70/2, 45 - 64/2, null);
+            } else if (player.getBanyaktelur() == 1) {
+                g.drawImage(readImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/telor2.png"), 645 - 70/2, 45 - 64/2, null);
+            } else if (player.getBanyaktelur() == 2) {
+                g.drawImage(readImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/telor3.png"), 645 - 70/2, 45 - 64/2, null);
+            }
+
+            g.drawImage(readImage(siput.getImage()), (int)Math.floor(siput.getX())-100/2, (int)Math.floor(siput.getY())-100-141/2, null);
+
+            g.drawString("100", 60, 93);
+            g.drawString("200", 174, 93);
+            g.drawString("500", 631, 93);
+
+            if (kurangkoin) {
+                g.setColor(Color.RED);
+                g.drawString(player.getJumlahkoin() + "", 752, 93);
+            } else {
+                g.drawString(player.getJumlahkoin() + "", 752, 93);
+            }
         }
+
+
+
     }
 }

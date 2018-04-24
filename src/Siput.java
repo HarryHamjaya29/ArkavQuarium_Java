@@ -17,13 +17,13 @@ public class Siput extends BendaAkuarium {
         pointtujuan = new MakananIkan(Main.rand.nextInt(Akuarium.SCREEN_WIDTH), Main.rand.nextInt(Akuarium.SCREEN_HEIGHT));
         pointtujuan.setX(Main.rand.nextInt(Akuarium.SCREEN_WIDTH));
         pointtujuan.setY(Main.rand.nextInt(Akuarium.SCREEN_HEIGHT));
-        this.setImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/siputkanan.png");
+        this.setImage("image/siputkanan.png");
     }
 
     public Siput(double x, double y, double a, double kecepatan) {
         super(x, y, a, kecepatan);
         pointtujuan = new MakananIkan(Math.random()%853, Math.random()%640);
-        this.setImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/siputkanan.png");
+        this.setImage("image/siputkanan.png");
     }
 
     @Override
@@ -32,10 +32,10 @@ public class Siput extends BendaAkuarium {
 
         if ((pointtujuan.getX() - this.getX()) > 0) {
             kanansiput = true;
-            this.setImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/siputkanan.png");
+            this.setImage("image/siputkanan.png");
         } else {
             kanansiput = false;
-            this.setImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/siputkiri.png");
+            this.setImage("image/siputkiri.png");
         }
 
         if ((kanansiput) && (this.getX() != Akuarium.SCREEN_WIDTH) && (Math.abs(this.getX() - pointtujuan.getX()) > 0.1)) {
@@ -86,10 +86,10 @@ public class Siput extends BendaAkuarium {
         if (terdekat != -1) {
             this.setArah(Math.atan2(listkoin.getIdx(terdekat).getY() - this.getY(), listkoin.getIdx(terdekat).getX() - this.getX()));
             if (this.getArah()*180/Akuarium.PI > -90 && this.getArah()*180/Akuarium.PI < 90) {
-                this.setImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/siputkanan.png");
+                this.setImage("image/siputkanan.png");
                 kanansiput = true;
             } else {
-                this.setImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/siputkiri.png");
+                this.setImage("image/siputkiri.png");
                 kanansiput = false;
             }
 
