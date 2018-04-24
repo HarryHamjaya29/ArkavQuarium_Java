@@ -11,7 +11,7 @@ public class Piranha extends Ikan{
 
     public Piranha(double x, double y, double arah, double kecepatan) {
         super(x, y, arah, kecepatan, "Piranha");
-        this.setImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/piranhakiri.png");
+        this.setImage("image/piranhakiri.png");
         this.setLapar(false);
     }
 
