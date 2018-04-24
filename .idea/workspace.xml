@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c9b7353-d89c-457a-81a6-bcb4ae32a5fc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Akuarium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Akuarium.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DriverList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DriverList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Koin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Koin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/List.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Siput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Siput.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,17 +37,21 @@
       <file leaf-file-name="Ikan.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Ikan.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-801">
-              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+            <state relative-caret-position="870">
+              <caret line="96" column="5" lean-forward="true" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Akuarium.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Akuarium.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Akuarium.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="275" column="141" selection-start-line="275" selection-start-column="141" selection-end-line="275" selection-end-column="141" />
+            <state relative-caret-position="165">
+              <caret line="262" selection-start-line="262" selection-end-line="262" />
+              <folding>
+                <element signature="e#2824#6210#0" expanded="true" />
+                <element signature="e#6209#6210#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="798" column="14" selection-start-line="798" selection-start-column="14" selection-end-line="798" selection-end-column="14" />
+            <state relative-caret-position="369">
+              <caret line="814" column="32" selection-start-line="814" selection-start-column="32" selection-end-line="814" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -180,7 +179,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="600" />
     <option name="y" value="24" />
     <option name="width" value="766" />
@@ -306,8 +305,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
-    <editor active="true" />
+    <frame x="600" y="24" width="766" height="744" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -318,11 +316,11 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2756024" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28773585" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09223674" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15665796" />
       <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.32831326" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -602,8 +600,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="798" column="14" selection-start-line="798" selection-start-column="14" selection-end-line="798" selection-end-column="14" />
+        <state relative-caret-position="369">
+          <caret line="814" column="32" selection-start-line="814" selection-start-column="32" selection-end-line="814" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -698,23 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ikan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-801">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Koin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-66">
@@ -736,10 +717,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ikan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="96" column="5" lean-forward="true" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Akuarium.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="275" column="141" selection-start-line="275" selection-start-column="141" selection-end-line="275" selection-end-column="141" />
+        <state relative-caret-position="165">
+          <caret line="262" selection-start-line="262" selection-end-line="262" />
+          <folding>
+            <element signature="e#2824#6210#0" expanded="true" />
+            <element signature="e#6209#6210#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

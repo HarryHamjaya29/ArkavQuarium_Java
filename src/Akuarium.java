@@ -28,11 +28,14 @@ public class Akuarium extends JPanel {
     private Map<String, BufferedImage> images;
     private int status;
     private long fps;
-    private boolean kurangkoin = false;
-    private int playCategory = -1;
     private JFrame jFrame;
     private static long now;
     private static long start;
+
+    private boolean mainmenu = true;
+    private boolean menang = false;
+    private boolean kalah = false;
+    private boolean kurangkoin = false;
 
     private Player player = new Player();
     private List<Ikan> ikan;
@@ -56,8 +59,6 @@ public class Akuarium extends JPanel {
         makananikan = new List<MakananIkan>();
         koin = new List<Koin>();
         siput = new Siput();
-
-        playCategory = -1;
     }
 
     private BufferedImage readImage(String path) {
@@ -93,8 +94,13 @@ public class Akuarium extends JPanel {
                 mouseX -= 291;
                 mouseY -= 105;
 
-                if (status == PLAY) {
+                if (kalah) {
 
+                } else if (mainmenu) {
+                    if ((mouseX <= 637 && mouseX >= 541) && (mouseY <= 275 && mouseY >= 188)) {
+                        mainmenu = false;
+                    }
+                } else {
                     int ketemu = -1;
                     for(int i = 0; i < koin.getSize() && ketemu == -1; i++) {
                         if (Math.abs(koin.getIdx(i).getX() - mouseX) < 30 && Math.abs(koin.getIdx(i).getY() - mouseY-100) < 30) {
@@ -250,6 +256,13 @@ public class Akuarium extends JPanel {
 
     @Override
     protected void paintComponent(Graphics g) {
+
+        if (mainmenu) {
+
+        } else {
+
+        }
+
         super.paintComponent(g);
         setBackground(Color.WHITE);
         g.setColor(Color.WHITE);
