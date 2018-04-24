@@ -1,41 +1,84 @@
+/**
+ * Kelas ini Untuk mengatur attribut user yang memainkan game.
+ */
 public class Player {
+    /**
+     * Attribut untuk menyimpan nilai koin dari player.
+     */
     private int jumlahkoin;
+
+    /**
+     * Attribut untuk menyimpan banyak telur yang dibeli dari player.
+     */
     private int banyaktelur;
 
+    /**
+     * Koin awal yang diterima oleh player.
+     */
+    private static final int KOIN_AWAL = 1000;
+
+    /**
+     * Constructor.
+     */
     public Player() {
-        this.jumlahkoin = 2000;
-        this.banyaktelur = 0;
+        this.jumlahkoin = KOIN_AWAL;
+        this.banyaktelur = Main.NOL;
     }
 
-    public Player(int x, int y) {
+    /**
+     * @param x .
+     * @param y .
+     */
+    public Player(final int x, final int y) {
         this.jumlahkoin = x;
         this.banyaktelur = y;
     }
 
+    /**
+     * @return int.
+     */
     public int getJumlahkoin() {
         return jumlahkoin;
     }
 
-    public void setJumlahkoin(int jumlahkoin) {
-        this.jumlahkoin = jumlahkoin;
+    /**
+     * @param x .
+     */
+    public void setJumlahkoin(final int x) {
+        this.jumlahkoin = x;
     }
 
+    /**
+     * @return int.
+     */
     public int getBanyaktelur() {
         return banyaktelur;
     }
 
-    public void setBanyaktelur(int banyaktelur) {
-        this.banyaktelur = banyaktelur;
+    /**
+     * @param x .
+     */
+    public void setBanyaktelur(final int x) {
+        this.banyaktelur = x;
     }
 
-    public void tambahKoin(int koin) {
+    /**
+     * @param koin .
+     */
+    public void tambahKoin(final int koin) {
         jumlahkoin += koin;
     }
 
-    public void kurangkanKoin(int koin) {
+    /**
+     * @param koin .
+     */
+    public void kurangkanKoin(final int koin) {
         jumlahkoin -= koin;
     }
 
+    /**
+     * Untuk menambahkan telur dari player.
+     */
     public void tambahTelur() {
         banyaktelur++;
     }
