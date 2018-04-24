@@ -29,28 +29,24 @@ public class List<T>{
         node.setNext(now);
         size++;
     }
-  public void removeIdx(int idx){
-        Node<T> prev = null;
-        Node<T> now = node;
-
-        int i = 0;
-        while (i < idx){
-            prev = now;
-            now = now.getNext();
-            i++;
+    public void removeIdx(int idx){
+        Node<T> temp = node;
+        if (idx == 0) {
+            node = node.getNext();
+            size--;
+            return;
+        }
+        while(temp.getNext() != null && idx > 1) {
+            temp = temp.getNext();
+            idx--;
+        }
+        if (temp.getNext() != null) {
+            size--;
+            Node<T> del = temp.getNext();
+            temp.setNext(del.getNext());
         }
 
-        if (now != null){
-            if (prev != null){
-                prev.setNext(now.getNext());
-            }else{
-                node = now.getNext();
-            }
-            now.setNext(null);
-            return;
-        }else return;
-  }
-    
+    }
     public void remove(T item){
         if(item.equals(node.getValue())){
             delFirst();

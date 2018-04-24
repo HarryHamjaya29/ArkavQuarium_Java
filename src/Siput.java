@@ -98,7 +98,6 @@ public class Siput extends BendaAkuarium {
             } else if ((this.getX() != 0) && (Math.abs(this.getX() - listkoin.getIdx(terdekat).getX()) > 1)) {
                 this.setX(this.getX() - this.getKecepatan()*0.0001);
             }
-            System.out.println((this.getX() - listkoin.getIdx(terdekat).getX()) + "," + (this.getY() - listkoin.getIdx(terdekat).getY()));
             if (Math.abs(this.getX() - listkoin.getIdx(terdekat).getX()) < 1 && Math.abs(this.getY() - listkoin.getIdx(terdekat).getY()) < 21){
                 return terdekat;
             }
