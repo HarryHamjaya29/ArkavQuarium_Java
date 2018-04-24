@@ -23,6 +23,7 @@ public class Akuarium extends JPanel {
     public static int SCREEN_WIDTH = 853;
     public static int SCREEN_HEIGHT = 640;
     public static double PI = 3.14159265;
+    public static int RADIUS_PENGAMBILAN = 5;
     public static int LOSE = 0;
     public static int WIN = 1;
     public static int LOAD = 0;
