@@ -164,7 +164,6 @@ public class Akuarium extends JPanel {
         initDefault();
 
         while(true) {
-//            System.out.println(ikan.getSize());
 
             now = System.nanoTime();
 
@@ -172,7 +171,6 @@ public class Akuarium extends JPanel {
                 syncAll();
             }
 
-//            System.out.println(time_since_start());
             jFrame.invalidate();
             jFrame.validate();
             jFrame.repaint();
@@ -268,6 +266,14 @@ public class Akuarium extends JPanel {
 
         for(int i = 0; i < koin.getSize(); i++) {
             g.drawImage(readImage(koin.getIdx(i).getImage()), (int)Math.floor(koin.getIdx(i).getX())-65/2, (int)Math.floor(koin.getIdx(i).getY())-100-30/2, null);
+        }
+
+        if (player.getBanyaktelur() == 0) {
+            g.drawImage(readImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/telor1.png"), 645 - 70/2, 45 - 64/2, null);
+        } else if (player.getBanyaktelur() == 1) {
+            g.drawImage(readImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/telor2.png"), 645 - 70/2, 45 - 64/2, null);
+        } else if (player.getBanyaktelur() == 2) {
+            g.drawImage(readImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/telor3.png"), 645 - 70/2, 45 - 64/2, null);
         }
 
         g.drawImage(readImage(siput.getImage()), (int)Math.floor(siput.getX())-100/2, (int)Math.floor(siput.getY())-100-141/2, null);

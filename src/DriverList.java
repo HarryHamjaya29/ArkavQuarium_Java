@@ -15,5 +15,11 @@ public class DriverList {
         for(int i = 0; i < listint.getSize(); i++) {
             System.out.println(listint.getIdx(i));
         }
+
+        listint.removeIdx(4);
+
+        for(int i = 0; i < listint.getSize(); i++) {
+            System.out.println(listint.getIdx(i));
+        }
     }
 }
