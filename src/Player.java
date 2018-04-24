@@ -3,7 +3,7 @@ public class Player {
     private int banyaktelur;
 
     public Player() {
-        this.jumlahkoin = 1000;
+        this.jumlahkoin = 2000;
         this.banyaktelur = 0;
     }
 

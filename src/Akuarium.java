@@ -1,6 +1,8 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
@@ -99,13 +101,16 @@ public class Akuarium extends JPanel {
                 mouseX -= 291;
                 mouseY -= 105;
 
+                System.out.println(mouseX + " , " + mouseY);
+
                 if (kalah) {
 
                 } else if (mainmenu) {
-                    System.out.println(mouseX + " , " + mouseY);
                     if ((mouseX <= 773 && mouseX >= 619) && (mouseY <= 471 && mouseY >= 324)) {
                         mainmenu = false;
                     }
+                } else if (menang) {
+
                 } else {
                     int ketemu = -1;
                     for(int i = 0; i < koin.getSize() && ketemu == -1; i++) {
@@ -142,8 +147,11 @@ public class Akuarium extends JPanel {
                                 player.kurangkanKoin(500);
                                 player.tambahTelur();
                                 kurangkoin = false;
+                                if (player.getBanyaktelur() == 3) {
+                                    menang = true;
+                                }
                             }
-                        } else if ((mouseX > 753 || mouseX < 683) || (mouseY > 135 || mouseY < 65)) {
+                        } else {
                             if (player.getJumlahkoin() < 5) {
                                 kurangkoin = true;
                             } else {
@@ -180,7 +188,7 @@ public class Akuarium extends JPanel {
             now = System.nanoTime();
 
             try {
-                Thread.sleep(40);
+                Thread.sleep(60);
 
                 syncAll();
 
@@ -262,6 +270,10 @@ public class Akuarium extends JPanel {
         for(int i = 0; i < koin.getSize(); i++) {
             koin.getIdx(i).gerak();
         }
+
+        if (player.getJumlahkoin() < 100 && koin.getSize() == 0 && ikan.getSize() == 0) {
+            kalah = true;
+        }
     }
 
     @Override
@@ -272,6 +284,14 @@ public class Akuarium extends JPanel {
 
         if (mainmenu) {
             g.drawImage(readImage(MAINMENU_IMAGE), 0, 0, null);
+        } else if (menang) {
+            g.drawImage(readImage(BACKGROUND_IMAGE), 0, 0, null);
+            g.drawImage(readImage(TOOLBAR_IMAGE), 0, 0, null);
+            g.drawImage(readImage(abspath+parentFolder+"image/congratulations.png"), (SCREEN_WIDTH-743)/2, (SCREEN_HEIGHT-551)/2, null);
+        } else if (kalah) {
+            g.drawImage(readImage(BACKGROUND_IMAGE), 0, 0, null);
+            g.drawImage(readImage(TOOLBAR_IMAGE), 0, 0, null);
+            g.drawImage(readImage(abspath+parentFolder+"image/gameover.png"), (SCREEN_WIDTH-853)/2, (SCREEN_HEIGHT-245)/2, null);
         } else {
             g.drawImage(readImage(BACKGROUND_IMAGE), 0, 0, null);
             g.drawImage(readImage(TOOLBAR_IMAGE), 0, 0, null);
@@ -308,9 +328,8 @@ public class Akuarium extends JPanel {
             } else {
                 g.drawString(player.getJumlahkoin() + "", 752, 93);
             }
+
+            g.drawImage(readImage(abspath+parentFolder+"image/save.png"), 63 - 80/2, 580 - 80/2, null);
         }
-
-
-
     }
 }
