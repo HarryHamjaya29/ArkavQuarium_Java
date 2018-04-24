@@ -10,7 +10,7 @@ public class Main{
 
     public static void main(String[] args){
         try {
-            Akuarium akuarium = new Akuarium("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/guppy1kiri.png");
+            Akuarium akuarium = new Akuarium("../../../image/guppy1kiri.png");
             akuarium.buildFrame();
 
             akuarium.setContent();

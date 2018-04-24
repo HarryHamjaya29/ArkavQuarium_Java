@@ -21,8 +21,10 @@ public class Akuarium extends JPanel {
     public static int PLAY = 1;
     public static int FINISH = 2;
 
-    private final String BACKGROUND_IMAGE = "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/Aquarium6.jpg";
-    private final String TOOLBAR_IMAGE = "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/tabatas.png";
+    private final String BACKGROUND_IMAGE = "../../../image/Aquarium6.jpg";
+    private final String TOOLBAR_IMAGE = "../../../image/tabatas.png";
+
+    private final String abspath = Akuarium.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 
     private BufferedImage defaultImage;
     private Map<String, BufferedImage> images;
@@ -47,7 +49,7 @@ public class Akuarium extends JPanel {
     public Akuarium(String defaultObjectImagePath) throws IOException {
         Random rand = new Random();
 
-        this.defaultImage = ImageIO.read(new File(defaultObjectImagePath));
+        this.defaultImage = ImageIO.read(new File(abspath+defaultObjectImagePath));
         this.images = new HashMap<>();
 
         this.fps = 1000000000L / 128L;
@@ -64,7 +66,7 @@ public class Akuarium extends JPanel {
         BufferedImage newImage = this.images.get(path);
         if (newImage == null)  {
             try {
-                newImage = ImageIO.read(new File(path));
+                newImage = ImageIO.read(new File(abspath+path));
             } catch (IOException e) {
                 newImage = defaultImage;
             }
