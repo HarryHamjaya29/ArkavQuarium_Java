@@ -179,14 +179,18 @@ public class Akuarium extends JPanel {
 
             now = System.nanoTime();
 
-            if ((now - lastFrameStart) >= fps) {
-                syncAll();
-            }
+            try {
+                Thread.sleep(40);
 
-            jFrame.invalidate();
-            jFrame.validate();
-            jFrame.repaint();
-            lastFrameStart = now;
+                syncAll();
+
+
+                jFrame.invalidate();
+                jFrame.validate();
+                jFrame.repaint();
+            } catch (InterruptedException e) {
+                System.out.println("ERROR");
+            }
         }
     }
 
@@ -285,11 +289,11 @@ public class Akuarium extends JPanel {
             }
 
             if (player.getBanyaktelur() == 0) {
-                g.drawImage(readImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/telor1.png"), 645 - 70/2, 45 - 64/2, null);
+                g.drawImage(readImage(abspath+parentFolder+"image/telor1.png"), 645 - 70/2, 45 - 64/2, null);
             } else if (player.getBanyaktelur() == 1) {
-                g.drawImage(readImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/telor2.png"), 645 - 70/2, 45 - 64/2, null);
+                g.drawImage(readImage(abspath+parentFolder+"image/telor2.png"), 645 - 70/2, 45 - 64/2, null);
             } else if (player.getBanyaktelur() == 2) {
-                g.drawImage(readImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/telor3.png"), 645 - 70/2, 45 - 64/2, null);
+                g.drawImage(readImage(abspath+parentFolder+"image/telor3.png"), 645 - 70/2, 45 - 64/2, null);
             }
 
             g.drawImage(readImage(siput.getImage()), (int)Math.floor(siput.getX())-100/2, (int)Math.floor(siput.getY())-100-141/2, null);
