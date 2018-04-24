@@ -6,18 +6,18 @@ public class Guppy extends Ikan{
     private double waktukoin;
     private static int makannaiklevel = 5;
     private static String[][] daftargambar = {
-        {   "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/guppy1kiri.png",
-            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/guppy1kanan.png",
-            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/guppylapar1kiri.png",
-            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/guppylapar1kanan.png"},
-        {   "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/guppy2kiri.png",
-            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/guppy2kanan.png",
-            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/guppylapar2kiri.png",
-            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/guppylapar2kanan.png"},
-        {   "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/guppy3kiri.png",
-            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/guppy3kanan.png",
-            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/guppylapar3kiri.png",
-            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/guppylapar3kanan.png"}
+        {   "image/guppy1kiri.png",
+                "image/guppy1kanan.png",
+                "image/guppylapar1kiri.png",
+                "image/guppylapar1kanan.png"},
+        {   "image/guppy2kiri.png",
+                "image/guppy2kanan.png",
+                "image/guppylapar2kiri.png",
+                "image/guppylapar2kanan.png"},
+        {   "image/guppy3kiri.png",
+                "image/guppy3kanan.png",
+                "image/guppylapar3kiri.png",
+                "image/guppylapar3kanan.png"}
     };
     private int level;
     private int jumlahmakanyangdimakan;

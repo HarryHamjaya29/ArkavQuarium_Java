@@ -1,16 +1,17 @@
 import java.util.Random;
 
 public class Piranha extends Ikan{
+
     private static String[] daftargambar = {
-            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/piranhakiri.png",
-            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/piranhakanan.png",
-            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/piranhalaparkiri.png",
-            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/piranhalaparkanan.png"
+            "image/piranhakiri.png",
+            "image/piranhakanan.png",
+            "image/piranhalaparkiri.png",
+            "image/piranhalaparkanan.png"
     };
 
     public Piranha(double x, double y, double arah, double kecepatan) {
         super(x, y, arah, kecepatan, "Piranha");
-        this.setImage("/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/piranhakiri.png");
+        this.setImage("image/piranhakiri.png");
         this.setLapar(false);
     }
 

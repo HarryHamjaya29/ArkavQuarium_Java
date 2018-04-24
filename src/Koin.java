@@ -4,10 +4,10 @@ public class Koin extends BendaAkuarium {
     private int nilai;
     private final int level;
     private static String[] daftargambar = {
-            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/koin1.jpg",
-            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/koin2.jpg",
-            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/koin3.jpg",
-            "/media/mhabibih/08966A79966A66E2/ITB/Semester 4/Orientasi Objek Pemrograman/ArkavQuarium_Java/image/koin4.jpg"
+            "image/koin1.jpg",
+            "image/koin2.jpg",
+            "image/koin3.jpg",
+            "image/koin4.jpg"
     };
 
     public Koin(double x, double y, double kecepatan, int nilai, int i) {
