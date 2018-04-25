@@ -105,25 +105,24 @@ public class Siput extends BendaAkuarium {
   int cariKoin(final List<Koin> listkoin) {
     boolean kanansiput = true;
     boolean ketemudasar = false;
-
     int terdekat = -1;
 
-    Posisi tujuan = new Siput(this.getX(), this.getY(), Main.NOL, Main.NOL);
-    Posisi now = new Siput(this.getX(), this.getY(), Main.NOL, Main.NOL);
+    Posisi tujuan = new Siput(this.getX(), this.getY(), 0, 0);
+    Posisi now = new Siput(this.getX(), this.getY(), 0, 0);
 
     for (int i = 0; i < listkoin.getSize() && !ketemudasar; i++) {
       if (Math.abs(listkoin.getIdx(i).getY() - Akuarium.SCREEN_HEIGHT
-              - DASAR_KOIN) < 1) {
+              - 20) < 1) {
         ketemudasar = true;
       }
     }
 
     if (ketemudasar) {
-      tujuan.setX(Main.MAX_NUMBER);
+      tujuan.setX(99999);
       tujuan.setY(Akuarium.SCREEN_HEIGHT);
       for (int i = 0; i < listkoin.getSize(); i++) {
         if (Math.abs(listkoin.getIdx(i).getY() - Akuarium.SCREEN_HEIGHT
-                - DASAR_KOIN) < Akuarium.RADIUS_PENGAMBILAN) {
+                - 20) < 1) {
           if (Math.abs(now.getX() - listkoin.getIdx(i).getX())
                   < Math.abs(now.getX() - tujuan.getX())) {
             terdekat = i;
@@ -147,10 +146,10 @@ public class Siput extends BendaAkuarium {
       this.setArah(Math.atan2(listkoin.getIdx(terdekat).getY()
               - this.getY(), listkoin.getIdx(terdekat).getX()
               - this.getX()));
-      if (this.getArah() * Main.SETENGAH_LINGKARAN / Akuarium.PI
-              > Main.SETENGAH_LINGKARAN
-              && this.getArah() * Main.SETENGAH_LINGKARAN / Akuarium.PI
-              < Main.SETENGAH_LINGKARAN) {
+      if (this.getArah() * 180 / Akuarium.PI
+              > -90
+              && this.getArah() * 180 / Akuarium.PI
+              < 90) {
         this.setImage("image/siputkanan.png");
         kanansiput = true;
       } else {
@@ -161,15 +160,14 @@ public class Siput extends BendaAkuarium {
       if ((kanansiput) && (this.getX() != Akuarium.SCREEN_WIDTH)
               && (Math.abs(this.getX() - listkoin.getIdx(terdekat).getX())
               > 1)) {
-        this.setX(this.getX() + this.getKecepatan() * RATIO_KECEPATAN);
+        this.setX(this.getX() + this.getKecepatan() * 0.0001);
       } else if ((this.getX() != 0) && (Math.abs(this.getX()
               - listkoin.getIdx(terdekat).getX()) > 1)) {
-        this.setX(this.getX() - this.getKecepatan() * RATIO_KECEPATAN);
+        this.setX(this.getX() - this.getKecepatan() * 0.0001);
       }
       if (Math.abs(this.getX() - listkoin.getIdx(terdekat).getX())
-              < Akuarium.RADIUS_PENGAMBILAN
-              && Math.abs(this.getY() - listkoin.getIdx(terdekat).getY())
-              < DASAR_KOIN + 1) {
+              < 5
+              && Math.abs(listkoin.getIdx(terdekat).getY() - Akuarium.SCREEN_HEIGHT - 20) < 5) {
         return terdekat;
       }
     }
